@@ -79,7 +79,7 @@ const getVideoGameById = async(req, res) => {
       let game = {
         id: data.id,
         name: data.name,
-        descripcion: data.description,
+        descripcion: data.description.replace(/<p>/g,'').replace(/<\/p>/g,''),
         fechaLanzamiento: data.released,
         img: data.background_image,
         rating: data.rating,

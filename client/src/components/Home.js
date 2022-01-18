@@ -64,11 +64,7 @@ function handleFilterCreated(e) {
 
 
     return(
-        <div >
-        {videogames.length === 0 ?
-         <>
-         <h1>Loading...</h1>
-        </> :
+       
        
 
     <div className="home">
@@ -104,15 +100,19 @@ function handleFilterCreated(e) {
     videogames={videogames.length}
     paginado={paginado}
     />
-   
+    <div >
+        {videogames.length === 0 ?
+         <>
+         <h1>Loading...</h1>
+        </> :
        <div className="cards">
         {currentVideogames?.map(vg => 
             <div key={vg.id} className="card">
             <Card id={vg.id} name={vg.name} img={vg.img} genero={vg.genero? vg.genero : vg.generos}/>
             </div>
             )}
-        </div>
         </div>}
     </div>
+        </div>
    
 )}

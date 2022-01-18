@@ -75,13 +75,16 @@
   }
 }
 
-
+body{
+    background-image: url("./bkgH5.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+}
 
 ////HOME Y CARDS
 .home {
-    background-image: url("./bkgH5.jpg");
-    background-size: cover;
-
+    width: 50%;
+    margin: 0 auto;
     bottom: 100%;
     border: none;
 }
@@ -113,7 +116,6 @@
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin-left: 100px;
 }
 
 .imgCard {

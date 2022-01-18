@@ -1,0 +1,353 @@
+//LANDING PAGE
+
+
+.Landing {
+    background-image: url("./bkg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.container,
+.first,
+.second {
+  position: absolute;
+}
+
+.container {
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 170px;
+  height: 50px;
+  transition: all 0.3s ease; 
+}
+
+.wrap {
+  width: 90%;
+  height: 50px;
+  border: 2px solid rgb(68, 27, 27);
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  transform:  rotate(5deg) perspective(1000px);
+}
+
+.first,
+.second {
+  width: 100%;
+  height: 50px;
+  font-family: 'Open Sans', sans-serif;
+  transition: all 0.2s ease-in-out;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: rgb(197, 100, 100);
+  letter-spacing: 2px; 
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+}
+
+.second {
+  opacity: 0;
+}
+
+.container:hover {
+   width: 280px;
+  
+  .wrap {
+  padding-bottom: 17px;
+  }
+  .first {
+    transform: translateY(-8px);
+    padding-top: 5px;
+  }
+  .second {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+}
+
+
+
+////HOME Y CARDS
+.home {
+    background-image: url("./bkgH5.jpg");
+    background-size: cover;
+
+    bottom: 100%;
+    border: none;
+}
+
+.card {
+   display: flex;
+   background-color: rgba(197, 100, 100, 0.527);
+   backdrop-filter: blur(0.5px);
+   border-radius: 10px;
+   top: 20vh;
+   bottom: 20vh;
+   height: 350px;
+   width: 300px;
+   padding: 40px 0;
+   margin-top: auto;
+   text-decoration: none;
+   align-items: center;
+   justify-content: center;
+   border-style: solid;
+   border-color: black;
+   border-width: .2rem;
+}
+
+.cards {
+    display: inline-grid;
+  width:100%;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-left: 100px;
+}
+
+.imgCard {
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;
+     border-style: solid;
+    border-color: black;
+    border-width: .2rem;
+}
+
+.generosCard {
+    display: inline-grid;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(3, 1fr);
+    color: #FFF8F3;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.nameCard {
+    text-decoration: underline rgba(197, 100, 100, 0.527);
+    color: #FFF8F3;
+    cursor: pointer;
+   
+}
+
+//// DETAILS
+
+.detailContainer {
+    background-color: rgba(197, 100, 100, 0.527);
+   position: fixed;
+    bottom: 0px;
+    top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.detailName {
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #FFF0F5;
+}
+.detailImg {
+    width:350px;
+    height: 300px;
+    border-radius: 10px;
+    filter: drop-shadow(16px 16px 20px #FA26A0)
+}
+.descripcionDetail {
+    margin-right: 20px;
+    margin-left: 20px;
+    word-spacing: 5px;
+    color: #FFF0F5;
+}
+.generosDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-indent: 50px;
+    white-space: nowrap;
+    color: #FFF0F5;
+}
+.plataformasDetail {
+    display: flex;
+    justify-content: center;
+    color: #FFF0F5;
+}
+.botonDetail {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-left: 730px;
+    border:1px solid #25729a; 
+    cursor: pointer;
+    width: 100px;
+    border-radius: 3px;
+    font-family: 'Open Sans';
+    font-size: 17px;
+    letter-spacing: 1px; 
+    padding: 10px 10px 10px 10px; 
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    text-align: center; 
+    color: #FFF0F5; 
+    background-color: #3093c7;
+    text-decoration: underline #3093c7;
+    font-weight: 1000px;
+}
+.fechaDetail, .ratingDetail {
+    color: #FFF0F5;
+}
+
+//// PAGINADO
+
+.paginado {
+    cursor: pointer;
+    display: inline-block;
+   width: 200px;
+    color: #FFF0F5;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border-radius: 5px;
+    column-gap: 2px;
+    letter-spacing: 10px;
+    font-size: 20px;
+    font-weight: 2000px;
+    margin-right: 56px;
+    
+}
+.numPaginado {
+    border-style: solid;
+    border-color: black;
+    border-width: .2rem;
+    display: inline;
+    justify-content: space-around;
+    letter-spacing: 20px;
+    left: 0;
+    border-radius: 5px;
+   font-weight: 500;
+   background-color: rgba(100, 183, 197, 0.527);
+}
+
+.paginado a.active {
+  color: white;
+  border-radius: 5px;
+  color: #FFF0F5;
+  float: right;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border-radius: 5px;
+}
+.paginado a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+    
+}
+
+
+/////SEARCHBAR
+.searchVideogame {
+    display: flex;
+    justify-content: center;
+}
+.inputSearch{
+    background-color: transparent;
+    border: none;
+    color: rgba(197, 100, 100, 0.527);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.input:focus {
+    outline: none;
+}
+.input::placeholder {
+    color: rgb(245, 245, 245);
+}
+.searchBoton {
+    border: solid 2px transparent;
+    border-radius: 20px;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: background-color 0.25s;
+    cursor: pointer;
+    color: white;
+}
+.searchBoton:hover {
+    background-color: rgba(245, 245, 245, 0.849);
+}
+
+////////FILTROS
+.filtroABC {
+    border: solid 2px transparent;
+    background-color: rgba(245, 245, 245, 0.733);
+    color: rgba(197, 100, 100, 0.781);
+    cursor: pointer;
+    font-family: 'Segoe UI';
+    border-width: .2rem;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: black;
+    margin-top: 10px;
+    font-weight: 500;
+}
+.filtroABC:hover {
+    background-color: rgba(245, 245, 245, 0.849);
+}
+
+.filtroVG {
+    border: solid 2px transparent;
+    background-color: rgba(245, 245, 245, 0.733);
+    color: rgba(197, 100, 100, 0.781);
+    cursor: pointer;
+    font-family: 'Segoe UI';
+    border-width: .2rem;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: black;
+    margin-top: 10px;
+    font-weight: 500;
+}
+.filtroVG:hover {
+    background-color: rgba(245, 245, 245, 0.849);
+}
+
+.filtroRating {
+    border: solid 2px transparent;
+    background-color: rgba(245, 245, 245, 0.733);
+    color: rgba(197, 100, 100, 0.781);
+    cursor: pointer;
+    font-family: 'Segoe UI';
+    border-width: .2rem;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: black;
+    margin-top: 10px;
+    font-weight: 500;
+}
+.filtroGenero {
+    border: solid 2px transparent;
+    background-color: rgba(245, 245, 245, 0.733);
+    color: rgba(197, 100, 100, 0.781);
+    cursor: pointer;
+    font-family: 'Segoe UI';
+    border-width: .2rem;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: black;
+    margin-top: 10px;
+    font-weight: 500;
+}

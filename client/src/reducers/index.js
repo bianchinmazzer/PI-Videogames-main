@@ -62,8 +62,8 @@ export default function rootReducer(state = initialState, action) {
        }
             if(action.payload !== "all"){
                  for(let i=0; i<vg.length; i++) {
-                        for(let j=0; j<vg[i].genero.length; j++) {
-                        if(action.payload === vg[i].genero[j].name) {
+                        for(let j=0; j<vg[i].generos.length; j++) {
+                        if(action.payload === vg[i].generos[j].name) {
                          arrGenero.push(vg[i])
                         }
                         }

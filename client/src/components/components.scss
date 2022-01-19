@@ -1,6 +1,14 @@
 //LANDING PAGE
-
-
+.icon-loader {
+    font-size: 60px;
+    color: white;
+}
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(197, 100, 100, 0.527);;
+}
 .Landing {
     background-image: url("./bkg.jpg");
     background-repeat: no-repeat;
@@ -82,11 +90,34 @@ body{
 }
 
 ////HOME Y CARDS
+.titulo {
+    margin-top: 10px;
+}
 .home {
     width: 50%;
     margin: 0 auto;
     bottom: 100%;
     border: none;
+}
+.boton-cargar, .boton-crear {
+    height: 3rem;
+    background-color: rgba(245, 245, 245, 0.733);
+    color: rgba(197, 100, 100, 0.781);
+    border-style: solid;
+    border-color: white;
+    border-width: .2rem;
+    font-family:monospace;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.boton-crear {
+    margin-right: 20px;
+}
+.boton-cargar:hover, .boton-crear:hover {
+    background-color: rgba(245, 245, 245, 0.849);
 }
 
 .card {
@@ -115,7 +146,8 @@ body{
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 100px;
+  padding: 20px 0px 20px 0px;
 }
 
 .imgCard {
@@ -147,11 +179,15 @@ body{
 
 .detailContainer {
     background-color: rgba(197, 100, 100, 0.527);
-   position: fixed;
+    align-items: center;
+    justify-content: center;
     bottom: 0px;
     top: 0px;
     display: flex;
     flex-wrap: wrap;
+    background-size: cover;
+    background-repeat: repeat;
+    margin: 0 auto;
 }
 .detailName {
     margin-top: 20px;
@@ -162,6 +198,9 @@ body{
 .detailImg {
     width:350px;
     height: 300px;
+    border: solid;
+    border-color: black;
+    border-width: .2rem;
     border-radius: 10px;
     filter: drop-shadow(16px 16px 20px #FA26A0)
 }
@@ -188,7 +227,8 @@ body{
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
-    margin-left: 730px;
+    align-items: center;
+    margin: 0 auto;
     border:1px solid #25729a; 
     cursor: pointer;
     width: 100px;
@@ -213,18 +253,17 @@ body{
 .paginado {
     cursor: pointer;
     display: inline-block;
-   width: 200px;
+     width: 100%;
     color: #FFF0F5;
-    padding: 8px 16px;
     text-decoration: none;
     transition: background-color .3s;
     border-radius: 5px;
     column-gap: 2px;
-    letter-spacing: 10px;
     font-size: 20px;
     font-weight: 2000px;
     margin-right: 56px;
-    
+    margin-bottom: 30px;
+    margin-top: 10px;
 }
 .numPaginado {
     border-style: solid;
@@ -232,11 +271,16 @@ body{
     border-width: .2rem;
     display: inline;
     justify-content: space-around;
-    letter-spacing: 20px;
     left: 0;
     border-radius: 5px;
    font-weight: 500;
    background-color: rgba(100, 183, 197, 0.527);
+}
+
+.paginado a {
+    text-align: center;
+    padding: 0px 10px 0px 10px;
+    border: 2px solid black;
 }
 
 .paginado a.active {
@@ -244,7 +288,6 @@ body{
   border-radius: 5px;
   color: #FFF0F5;
   float: right;
-  padding: 8px 16px;
   text-decoration: none;
   transition: background-color .3s;
   border-radius: 5px;
@@ -255,11 +298,16 @@ body{
     
 }
 
+.paginado ul{
+    padding: 0px;
+}
+
 
 /////SEARCHBAR
 .searchVideogame {
     display: flex;
     justify-content: center;
+    padding: 20px 0 20px 0;
 }
 .inputSearch{
     background-color: transparent;
@@ -267,6 +315,7 @@ body{
     color: rgba(197, 100, 100, 0.527);
     font-size: 1.5rem;
     font-weight: 300;
+    
 }
 .input:focus {
     outline: none;
@@ -340,6 +389,9 @@ body{
     margin-top: 10px;
     font-weight: 500;
 }
+.filtroRating:hover {
+    background-color: rgba(245, 245, 245, 0.849);
+}
 .filtroGenero {
     border: solid 2px transparent;
     background-color: rgba(245, 245, 245, 0.733);
@@ -352,4 +404,15 @@ body{
     border-color: black;
     margin-top: 10px;
     font-weight: 500;
+}
+.filtroGenero:hover {
+    background-color: rgba(245, 245, 245, 0.849);
+}
+
+//////ERORS
+.error {
+    font-family: Verdana;
+    font-size: 12px;
+    font-weight: 400;
+    color: red;
 }

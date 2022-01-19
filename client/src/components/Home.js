@@ -7,7 +7,7 @@ import Card from "./Card.js";
 import Paginado from "./Paginado.js";
 import SearchBar from "./SearchBar.js";
 import "./components.scss" 
-
+import { IoGameControllerOutline } from "react-icons/io5";
 
 export default function Home() {
 
@@ -15,6 +15,7 @@ const dispatch = useDispatch()
 const videogames = useSelector((state) => state.videogames)
 const generos = useSelector((state) => state.generos)
 
+// eslint-disable-next-line
 const [orden, setOrden] = useState("")
 const [currentPage, setCurrentPage] = useState(1)
 const [videogamesPerPage] = useState(15)
@@ -68,9 +69,14 @@ function handleFilterCreated(e) {
        
 
     <div className="home">
-        <Link to="videogame">Crear videojuego</Link>
-        <br/>
-        <button onClick={e=>{handleClick(e)}}>
+        <h1 className="titulo">Videogames Matrix App</h1>
+      
+        <SearchBar/>
+       
+        <Link to="videogame">
+            <button className="boton-crear">Crear videojuego</button>
+            </Link>
+        <button className="boton-cargar" onClick={e=>{handleClick(e)}}>
             Cargar videogames</button>
         <div>
         
@@ -94,25 +100,31 @@ function handleFilterCreated(e) {
                     )}
                 </select>
         </div>
-        <SearchBar/>
-        <Paginado
-    videogamesPerPage={videogamesPerPage}
-    videogames={videogames.length}
-    paginado={paginado}
-    />
     <div >
+        
         {videogames.length === 0 ?
          <>
-         <h1>Loading...</h1>
+         <br/>
+         <br/>
+         <br/>
+       
+         <h1 className="icon-loader"><IoGameControllerOutline /></h1>
+         <h2 className="loading">Loading...</h2>
+     
         </> :
        <div className="cards">
         {currentVideogames?.map(vg => 
             <div key={vg.id} className="card">
-            <Card id={vg.id} name={vg.name} img={vg.img} genero={vg.genero? vg.genero : vg.generos}/>
+            <Card id={vg.id} name={vg.name} img={vg.img} genero={vg.generos}/>
             </div>
             )}
         </div>}
     </div>
+   <Paginado
+videogamesPerPage={videogamesPerPage}
+videogames={videogames.length}
+paginado={paginado}
+/>
         </div>
    
 )}

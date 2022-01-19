@@ -18,7 +18,7 @@ const getAllVideogames = async(req,res) => {
                 id: game.id,
                 img: game.background_image,
                 name: game.name,
-                genero: game.genres.map(g => g),
+                generos: game.genres.map(g => g),
                 rating: game.rating
             }
             return formatedGame;
@@ -83,7 +83,7 @@ const getVideoGameById = async(req, res) => {
         fechaLanzamiento: data.released,
         img: data.background_image,
         rating: data.rating,
-        genero: data.genres, 
+        generos: data.genres, 
         plataformas: platforms
       };
       return res.status(200).send(game);

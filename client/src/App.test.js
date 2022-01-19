@@ -1,8 +1,34 @@
-import { render, screen } from '@testing-library/react';
 import App from './App';
+import React from 'react';
+import { mount, configure } from 'enzyme';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
+import LandingPage from '../src/components/LandindPage';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+import { MemoryRouter,  } from 'react-router-dom';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+
+configure({ adapter: new Adapter() });
+
+describe("App", () => {
+  let store;
+  const middlewares = [];
+  const mockStore = configureStore(middlewares);
+
+  beforeEach(() => {
+    store = mockStore([]);
+  });
+  describe('El LandinPage deberia renderizarse en esta ruta /', () => {
+    it('LandingPage debe renderizarse en la route "/"', () => {
+      const wrapper = mount(
+          <Provider store={store}>
+            <MemoryRouter initialEntries={[ '/' ]}>
+              <App />
+            </MemoryRouter>
+          </Provider>
+      );
+        expect(wrapper.find(LandingPage)).toHaveLength(1);
+    });
+  });
+
+})

@@ -7,6 +7,8 @@ const { Videogame, conn } = require('../../src/db.js');
 const agent = session(app);
 const videogame = {
   name: 'Super Mario Bros',
+  description: "El juego del fontanero",
+  platforms:  ["PC"]
 };
 
 describe('Videogame routes', () => {
@@ -14,11 +16,18 @@ describe('Videogame routes', () => {
   .catch((err) => {
     console.error('Unable to connect to the database:', err);
   }));
-  beforeEach(() => Videogame.sync({ force: true })
-    .then(() => Videogame.create(videogame)));
+  beforeEach(() => Videogame.sync({ force: true }))
+    // .then(() => Videogame.create(videogame));
   describe('GET /videogames', () => {
-    it('should get 200', () =>
-      agent.get('/videogames').expect(200)
-    );
+    it('should get 200', (done) => {
+      agent.get('/videogames').expect(200);
+      done();
+    });
+  });
+  describe('GET /generos', () => {
+    it('should get 200', (done) => {
+      agent.get('/generos').expect(200);
+      done();
+    });
   });
 });

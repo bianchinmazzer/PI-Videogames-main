@@ -19,7 +19,7 @@ export default function Details(props) {
             <h2 className="detailName">{myVideogame.name}</h2>
             <div>
                 <img className="detailImg" src={myVideogame.img} alt="Not found"/>
-                <h3 className="generosDetail">Generos: {myVideogame.genero?.map(g => g.name + ", ")}</h3>
+                <h3 className="generosDetail">Generos: {myVideogame.generos?.map(g => g.name + ", ")}</h3>
                 <p className="descripcionDetail">Descripcion:{myVideogame.descripcion}</p>
                 <h4 className="fechaDetail">Fecha de lanzamiento:{myVideogame.fechaLanzamiento}</h4>
                 <h3 className="ratingDetail">Rating:{myVideogame.rating}</h3>

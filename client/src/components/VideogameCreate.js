@@ -110,38 +110,39 @@ export default function VideogameCreate() {
     return (
         
         <div>
-            <Link to="/home"><button>Volver</button></Link>
-            <h1>Crea tu videojuego</h1>
-            <form onSubmit={(e)=>handleSubmit(e)}>
+            
+            
+            <div className="crear-container">
+            <form className="formulario" onSubmit={(e)=>handleSubmit(e)}>
                 <div>
-                    <label>Nombre:</label>
-                    <input type="text" value={input.name} name="name" onChange={(e)=>handleChange(e)}></input>
+                    <label className="label-genero">Nombre: </label>
+                    <input placeholder="Nombre..." className="input-CV" type="text" value={input.name} name="name" onChange={(e)=>handleChange(e)}></input>
                     {errors.name ?
                         <p className="error">{errors.name}</p> : null
                 }
                 </div>
                 <div>
-                    <label>Descripcion:</label>
-                    <input type="text" value={input.descripcion} name="descripcion" onChange={(e)=>handleChange(e)}></input>
+                    <label className="label-genero">Descripcion: </label>
+                    <input placeholder="Descripcion..." className="input-CV" type="text" value={input.descripcion} name="descripcion" onChange={(e)=>handleChange(e)}></input>
                     {errors.descripcion?
                         <p className="error">{errors.descripcion}</p> : null
                     }
                 </div>
                 <div>
-                    <label>Fecha de lanzamiento:</label>
-                    <input type="text" value={input.fechaLanzamiento} name="fechaLanzamiento" onChange={(e)=>handleChange(e)}></input>
+                    <label className="label-genero">Fecha de lanzamiento: </label>
+                    <input placeholder="Fecha de lanzamiento..." className="input-CV" type="text" value={input.fechaLanzamiento} name="fechaLanzamiento" onChange={(e)=>handleChange(e)}></input>
                 </div>
                 <div>
-                    <label>Imagen:</label>
-                    <input type="text" value={input.img} name="img" onChange={(e)=>handleChange(e)} required/>
+                    <label className="label-genero">Imagen: </label>
+                    <input placeholder="URL de imagen..." className="input-CV" type="text" value={input.img} name="img" onChange={(e)=>handleChange(e)} required/>
                     {errors.img ?
                         <p className="error">{errors.img}</p> : null
                     }
                 </div>
                 <div>
-                    <label>Plataformas:</label>
+                    <label className="label-genero">Plataformas: </label>
 
-                    <select name="plataformas" onChange={e => handleChange(e)} multiple required>
+                    <select  className="input-CV" name="plataformas" onChange={e => handleChange(e)} multiple required>
                         <option value="PS5">PS5</option>
                         <option value="PS4">PS4</option>
                         <option value="X-BOX">X-BOX</option>
@@ -151,7 +152,8 @@ export default function VideogameCreate() {
                         <p className="error">{errors.plataformas}</p> : null
                     }
                 </div>
-                <select name="generos" onChange={(e)=>handleChange(e)}>
+                <label className="label-genero">Generos: </label>
+                <select className="input-CV" name="generos" onChange={(e)=>handleChange(e)}>
                     {generos.map((g) => 
                     <option value={g.name}>{g.name}</option>
                     )}
@@ -160,15 +162,17 @@ export default function VideogameCreate() {
                         <p className="error">{errors.genero}</p> : null
                     }
                 <ul><li>{input.genero.map(g => g + ", ")}</li></ul>
-                <button type="submit">Crear Videojuego</button>
-            </form>
             {input.genero.map(g => 
                 <div>
-                    <p>{g}</p>
-                    <button onClick={()=>handleDelete(g)}>X</button>
+                    <p>{g}</p> <button className="boton-cerrar" onClick={()=>handleDelete(g)}>X</button>
                 </div>
                 )}
+                <button className="boton-crearVg" type="submit">Crear Videojuego</button> 
+                <br/>
+                <Link to="/home"><button className="botonVolver-CV">Volver</button></Link>
+            </form>
+                </div>
                 
         </div>
     )
-}
+} 

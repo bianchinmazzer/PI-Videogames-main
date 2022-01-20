@@ -69,13 +69,16 @@ function handleFilterCreated(e) {
        
 
     <div className="home">
-        <h1 className="titulo">Videogames Matrix App</h1>
-      
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <SearchBar/>
        
         <Link to="videogame">
             <button className="boton-crear">Crear videojuego</button>
             </Link>
+            
         <button className="boton-cargar" onClick={e=>{handleClick(e)}}>
             Cargar videogames</button>
         <div>

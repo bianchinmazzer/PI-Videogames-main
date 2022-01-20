@@ -33,24 +33,16 @@ export default function rootReducer(state = initialState, action) {
             }
         case "FILTER_CREATED":
             const allVideogames = state.allVideogames
-            const createdFilter = action.payload === "created" ? allVideogames.filter(e => e.createdInDb) : 
+            const createdFilter = action.payload === "created" ? allVideogames.filter(e => e.createdInDb)  : 
+            action.payload === "created" && state.videogames.length === 0 ? state.videogames2 :
             action.payload === "exst"? allVideogames.filter(e => !e.createdInDb) : 
             action.payload === "all" && allVideogames
-            // allVideogames.filter(e => !e.createdInDb)
+
             return {
                 ...state,
                 videogames: createdFilter
             }
         case "FILTER_GENERO": 
-        // const todosLosGeneros = state.allVideogames
-        //  const generoFiltered = action.payload === 'all' ? todosLosGeneros
-        //  : todosLosGeneros.filter((e)=>
-        //  e.genero?.includes(action.payload))              
-         
-        //  return {
-        //      ...state,
-        //      videogames: generoFiltered,
-        //  }
         const vg = state.allVideogames
         var arrGenero = []
         

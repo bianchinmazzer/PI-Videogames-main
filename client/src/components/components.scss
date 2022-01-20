@@ -2,12 +2,14 @@
 .icon-loader {
     font-size: 60px;
     color: white;
+    
 }
+
 .loading {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(197, 100, 100, 0.527);;
+    color: white;
 }
 .Landing {
     background-image: url("./bkg.jpg");
@@ -84,10 +86,20 @@
 }
 
 body{
-    background-image: url("./bkgH5.jpg");
-    background-size: cover;
-    background-repeat: repeat;
+    // background-image: url("./bkg5.jpg");
+    background: url("./11854.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+//   zoom: 60%;
+// background-size: 1700px;
+// margin-top: 0%;
+// margin-bottom: 0%;
+// margin-left: 50px;
+// padding-left: 50px;
 }
+
 
 ////HOME Y CARDS
 .titulo {
@@ -101,17 +113,18 @@ body{
 }
 .boton-cargar, .boton-crear {
     height: 3rem;
-    background-color: rgba(245, 245, 245, 0.733);
-    color: rgba(197, 100, 100, 0.781);
+    background-color: transparent;
+    backdrop-filter: blur(30px);
+    color: #FBFF00;
     border-style: solid;
-    border-color: white;
+    border-color: black;
     border-width: .2rem;
     font-family:monospace;
     font-weight: 700;
     border-radius: 5px;
     font-size: 20px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 120px;
 }
 .boton-crear {
     margin-right: 20px;
@@ -122,8 +135,8 @@ body{
 
 .card {
    display: flex;
-   background-color: rgba(197, 100, 100, 0.527);
-   backdrop-filter: blur(0.5px);
+   background-color: transparent;
+   backdrop-filter: blur(10px);
    border-radius: 10px;
    top: 20vh;
    bottom: 20vh;
@@ -137,6 +150,10 @@ body{
    border-style: solid;
    border-color: black;
    border-width: .2rem;
+}
+.card:hover {
+    background-color: rgba(245, 245, 245, 0.658);
+    cursor: grabbing;
 }
 
 .cards {
@@ -169,7 +186,7 @@ body{
 }
 
 .nameCard {
-    text-decoration: underline rgba(197, 100, 100, 0.527);
+    text-decoration: none;
     color: #FFF8F3;
     cursor: pointer;
    
@@ -178,7 +195,7 @@ body{
 //// DETAILS
 
 .detailContainer {
-    background-color: rgba(197, 100, 100, 0.527);
+    background-color: rgba(245, 245, 245, 0.686);
     align-items: center;
     justify-content: center;
     bottom: 0px;
@@ -193,7 +210,7 @@ body{
     margin-top: 20px;
     font-size: 20px;
     font-family: sans-serif;
-    color: #FFF0F5;
+    color: black;
 }
 .detailImg {
     width:350px;
@@ -202,13 +219,13 @@ body{
     border-color: black;
     border-width: .2rem;
     border-radius: 10px;
-    filter: drop-shadow(16px 16px 20px #FA26A0)
+    filter: drop-shadow(16px 16px 20px #FBFF00)
 }
 .descripcionDetail {
     margin-right: 20px;
     margin-left: 20px;
     word-spacing: 5px;
-    color: #FFF0F5;
+    color: black;
 }
 .generosDetail {
     display: flex;
@@ -216,36 +233,29 @@ body{
     align-items: center;
     text-indent: 50px;
     white-space: nowrap;
-    color: #FFF0F5;
+    color: black;
 }
 .plataformasDetail {
     display: flex;
     justify-content: center;
-    color: #FFF0F5;
+    color: black;
 }
 .botonDetail {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    border:1px solid #25729a; 
+    height: 3rem;
+    background-color: rgba(245, 245, 245, 0.733);
+    color: rgba(197, 100, 100, 0.781);
+    border-style: solid;
+    border-color: black;
+    border-width: .2rem;
+    font-family:monospace;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 20px;
     cursor: pointer;
-    width: 100px;
-    border-radius: 3px;
-    font-family: 'Open Sans';
-    font-size: 17px;
-    letter-spacing: 1px; 
-    padding: 10px 10px 10px 10px; 
-    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
-    text-align: center; 
-    color: #FFF0F5; 
-    background-color: #3093c7;
-    text-decoration: underline #3093c7;
-    font-weight: 1000px;
+    margin-top: 10px;
 }
 .fechaDetail, .ratingDetail {
-    color: #FFF0F5;
+    color: black;
 }
 
 //// PAGINADO
@@ -308,6 +318,9 @@ body{
     display: flex;
     justify-content: center;
     padding: 20px 0 20px 0;
+    float: left;
+    margin-left: -47%;
+    margin-top: -7%;
 }
 .inputSearch{
     background-color: transparent;
@@ -344,8 +357,9 @@ body{
 ////////FILTROS
 .filtroABC {
     border: solid 2px transparent;
-    background-color: rgba(245, 245, 245, 0.733);
-    color: rgba(197, 100, 100, 0.781);
+    background-color: transparent;
+    backdrop-filter: blur(35px);
+    color: #49FF00;
     cursor: pointer;
     font-family: 'Segoe UI';
     border-width: .2rem;
@@ -361,8 +375,9 @@ body{
 
 .filtroVG {
     border: solid 2px transparent;
-    background-color: rgba(245, 245, 245, 0.733);
-    color: rgba(197, 100, 100, 0.781);
+    background-color: transparent;
+    backdrop-filter: blur(35px);
+    color: #49FF00;
     cursor: pointer;
     font-family: 'Segoe UI';
     border-width: .2rem;
@@ -378,8 +393,9 @@ body{
 
 .filtroRating {
     border: solid 2px transparent;
-    background-color: rgba(245, 245, 245, 0.733);
-    color: rgba(197, 100, 100, 0.781);
+    background-color: transparent;
+    backdrop-filter: blur(35px);
+    color: #49FF00;
     cursor: pointer;
     font-family: 'Segoe UI';
     border-width: .2rem;
@@ -394,8 +410,9 @@ body{
 }
 .filtroGenero {
     border: solid 2px transparent;
-    background-color: rgba(245, 245, 245, 0.733);
-    color: rgba(197, 100, 100, 0.781);
+    background-color: transparent;
+    backdrop-filter: blur(35px);
+    color: #49FF00;
     cursor: pointer;
     font-family: 'Segoe UI';
     border-width: .2rem;
@@ -415,4 +432,76 @@ body{
     font-size: 12px;
     font-weight: 400;
     color: red;
+}
+/////CREATEVIDEOGAME
+.formulario {
+    width: 400px;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: transparent;
+    backdrop-filter: blur(40px);
+    border-style: solid;
+    border-width: .3rem;
+    border-color: black;
+    border-radius: 10px;
+    margin-top: 190px;
+}
+
+.boton-crearVg, .botonVolver-CV {
+    height: 3rem;
+    background-color: rgba(245, 245, 245, 0.733);
+    color: #00FFF0;
+    border-style: solid;
+    border-color: white;
+    border-width: .2rem;
+    font-family:monospace;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.botonVolver-CV {
+    height: 1.5rem;
+    font-size: 10px;
+}
+.boton-crearVg:hover, .botonVolver-CV {
+    background-color: rgba(245, 245, 245, 0.849);
+}
+.label-genero {
+    height: 1.5rem;
+    color: rgb(245, 245, 245);
+}
+.input-CV {
+    border-style: solid;
+    border-width: .1rem;
+    border-color: white;
+    border-radius: 5px;
+    background-color: transparent;
+    backdrop-filter: blur(0.5px);
+    color: white;
+    display: list-item;
+    text-align: center;
+    
+}
+.boton-cerrar {
+    border: solid 2px transparent;
+    border-radius: 9999px;
+    justify-content: center;
+    width: 1.5rem;
+    padding: 0;
+     background-color: transparent;
+     transition: background-color 0.25s;
+   margin-left: 0.75rem;
+    cursor: pointer;
+    color: white;
+    align-items: center;
+    margin-right: -0.5rem;
+    margin-bottom: 0.15rem;
+    margin-top: -0.15rem;
+}
+
+.boton-cerrar:hover {
+    background-color: rgba(197, 100, 100, 0.733);
 }

@@ -37,6 +37,7 @@ export function getGenres() {
     }
 }
 
+
 export function postVideogame(payload) {
     return async function() {
         var vg = await axios.post(" http://localhost:3001/createvideogame", payload)

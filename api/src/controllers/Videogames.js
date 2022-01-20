@@ -19,7 +19,8 @@ const getAllVideogames = async(req,res) => {
                 img: game.background_image,
                 name: game.name,
                 generos: game.genres.map(g => g),
-                rating: game.rating
+                rating: game.rating,
+                plataformas: game.platforms.map(p => p)
             }
             return formatedGame;
         });

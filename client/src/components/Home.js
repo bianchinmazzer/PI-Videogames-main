@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import Card from "./Card.js";
 import Paginado from "./Paginado.js";
 import SearchBar from "./SearchBar.js";
-import "./components.scss" 
+import "./components.css" 
 import { IoGameControllerOutline } from "react-icons/io5";
 
 export default function Home() {

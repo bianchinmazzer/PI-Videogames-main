@@ -1,4 +1,4 @@
-//LANDING PAGE
+/* //LANDING PAGE */
 .icon-loader {
     font-size: 60px;
     color: white;
@@ -71,37 +71,26 @@
 
 .container:hover {
    width: 280px;
-  
-  .wrap {
-  padding-bottom: 17px;
-  }
-  .first {
-    transform: translateY(-8px);
-    padding-top: 5px;
-  }
-  .second {
-    transform: translateY(20px);
-    opacity: 1;
-  }
-}
+}  
+
 
 body{
-    // background-image: url("./bkg5.jpg");
+    /* // background-image: url("./bkg5.jpg"); */
     background: url("./11854.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-//   zoom: 60%;
+/* //   zoom: 60%;
 // background-size: 1700px;
 // margin-top: 0%;
 // margin-bottom: 0%;
 // margin-left: 50px;
-// padding-left: 50px;
+// padding-left: 50px; */
 }
 
 
-////HOME Y CARDS
+/* ////HOME Y CARDS */
 .titulo {
     margin-top: 10px;
 }
@@ -130,7 +119,7 @@ body{
     margin-right: 20px;
 }
 .boton-cargar:hover, .boton-crear:hover {
-    background-color: rgba(245, 245, 245, 0.849);
+    background-color: rgba(245, 245, 245, 0.781);
 }
 
 .card {
@@ -150,6 +139,10 @@ body{
    border-style: solid;
    border-color: black;
    border-width: .2rem;
+}
+
+.card a{
+    text-decoration: none;
 }
 .card:hover {
     background-color: rgba(245, 245, 245, 0.658);
@@ -192,10 +185,10 @@ body{
    
 }
 
-//// DETAILS
+/* //// DETAILS */
 
 .detailContainer {
-    background-color: rgba(245, 245, 245, 0.686);
+    background-image: url("./back\ detail.jpg");
     align-items: center;
     justify-content: center;
     bottom: 0px;
@@ -210,13 +203,13 @@ body{
     margin-top: 20px;
     font-size: 20px;
     font-family: sans-serif;
-    color: black;
+    color: white;
 }
 .detailImg {
     width:350px;
     height: 300px;
     border: solid;
-    border-color: black;
+    border-color: white;
     border-width: .2rem;
     border-radius: 10px;
     filter: drop-shadow(16px 16px 20px #FBFF00)
@@ -225,7 +218,7 @@ body{
     margin-right: 20px;
     margin-left: 20px;
     word-spacing: 5px;
-    color: black;
+    color: white;
 }
 .generosDetail {
     display: flex;
@@ -233,19 +226,19 @@ body{
     align-items: center;
     text-indent: 50px;
     white-space: nowrap;
-    color: black;
+    color: white;
 }
 .plataformasDetail {
     display: flex;
     justify-content: center;
-    color: black;
+    color: white;
 }
 .botonDetail {
     height: 3rem;
     background-color: rgba(245, 245, 245, 0.733);
-    color: rgba(197, 100, 100, 0.781);
+    color: #FF008E;
     border-style: solid;
-    border-color: black;
+    border-color: white;
     border-width: .2rem;
     font-family:monospace;
     font-weight: 700;
@@ -255,10 +248,10 @@ body{
     margin-top: 10px;
 }
 .fechaDetail, .ratingDetail {
-    color: black;
+    color: white;
 }
 
-//// PAGINADO
+/* //// PAGINADO */
 
 .paginado {
     cursor: pointer;
@@ -313,14 +306,14 @@ body{
 }
 
 
-/////SEARCHBAR
+/* /////SEARCHBAR */
 .searchVideogame {
     display: flex;
     justify-content: center;
     padding: 20px 0 20px 0;
     float: left;
     margin-left: -47%;
-    margin-top: -7%;
+    margin-top: -8%;
 }
 .inputSearch{
     background-color: transparent;
@@ -329,6 +322,10 @@ body{
     font-size: 1.5rem;
     font-weight: 300;
     
+    border-radius: 5px;
+}
+.inputSearch:hover{
+    background-color: rgba(245, 245, 245, 0.849);
 }
 .input:focus {
     outline: none;
@@ -354,7 +351,7 @@ body{
     background-color: rgba(245, 245, 245, 0.849);
 }
 
-////////FILTROS
+/* ////////FILTROS */
 .filtroABC {
     border: solid 2px transparent;
     background-color: transparent;
@@ -426,15 +423,17 @@ body{
     background-color: rgba(245, 245, 245, 0.849);
 }
 
-//////ERORS
+/* //////ERORS */
 .error {
     font-family: Verdana;
     font-size: 12px;
     font-weight: 400;
     color: red;
 }
-/////CREATEVIDEOGAME
+/* /////CREATEVIDEOGAME */
 .formulario {
+    display: flex;
+    flex-direction: column;
     width: 400px;
     padding: 10px;
     margin: 0 auto;
@@ -445,6 +444,22 @@ body{
     border-color: black;
     border-radius: 10px;
     margin-top: 190px;
+}
+
+
+.formulario div{
+    display: flex;
+    flex-direction: column;
+}
+
+.arregloGenero{
+    display: flex;
+    flex-direction: row;
+}
+
+.formulario ul {
+    list-style-type: none;
+    color: white;
 }
 
 .boton-crearVg, .botonVolver-CV {
@@ -481,9 +496,13 @@ body{
     background-color: transparent;
     backdrop-filter: blur(0.5px);
     color: white;
-    display: list-item;
-    text-align: center;
+    /* // display: list-item;
+    // text-align: center; */
     
+}
+
+.input-CV::placeholder{
+    color: white;
 }
 .boton-cerrar {
     border: solid 2px transparent;
@@ -501,6 +520,7 @@ body{
     margin-bottom: 0.15rem;
     margin-top: -0.15rem;
 }
+
 
 .boton-cerrar:hover {
     background-color: rgba(197, 100, 100, 0.733);

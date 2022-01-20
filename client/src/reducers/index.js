@@ -5,7 +5,8 @@ const initialState = {
     allVideogames: [],
     generos: [],
     details: [],
-    videogames2: []
+    videogames2: [],
+    
 }
 
 export default function rootReducer(state = initialState, action) {
@@ -27,6 +28,7 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 generos: action.payload
             }
+        
         case "POST_VIDEOGAME":
             return {
                 ...state

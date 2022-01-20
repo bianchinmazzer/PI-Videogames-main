@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Link, useHistory } from "react-router-dom";
-import { postVideogame, getGenres } from "../actions";
+import { postVideogame, getGenres} from "../actions";
 import { useDispatch, useSelector } from "react-redux";
 
 function validate(input) {
@@ -28,6 +28,7 @@ export default function VideogameCreate() {
     const dispatch = useDispatch()
     const history = useHistory()
     const generos = useSelector((state) => state.generos)
+    
     const [errors, setErrors] = useState({});
     
     const [input, setInput] = useState({
@@ -94,7 +95,7 @@ export default function VideogameCreate() {
         }
         }
 
-        console.log(errors)
+       
     
     function handleDelete(g) {
         setInput({
@@ -106,6 +107,8 @@ export default function VideogameCreate() {
     useEffect(()=>{
         dispatch(getGenres())
     }, [dispatch]);
+
+  
 
     return (
         
@@ -143,10 +146,10 @@ export default function VideogameCreate() {
                     <label className="label-genero">Plataformas: </label>
 
                     <select  className="input-CV" name="plataformas" onChange={e => handleChange(e)} multiple required>
-                        <option value="PS5">PS5</option>
-                        <option value="PS4">PS4</option>
-                        <option value="X-BOX">X-BOX</option>
-                        <option value="PC">PC</option>
+                    {generos.map((p) => 
+                    <option value={p.name}>{p.name}</option>
+                    )}
+                    
                     </select>
                 {errors.plataformas ? 
                         <p className="error">{errors.plataformas}</p> : null
@@ -163,7 +166,7 @@ export default function VideogameCreate() {
                     }
                 <ul><li>{input.genero.map(g => g + ", ")}</li></ul>
             {input.genero.map(g => 
-                <div>
+                <div className="arregloGenero">
                     <p>{g}</p> <button className="boton-cerrar" onClick={()=>handleDelete(g)}>X</button>
                 </div>
                 )}
